@@ -1,0 +1,21 @@
+# IR draft v0 (hand-written; schema not fixed yet, see NOTES.md)
+theorem:
+  lhs: "sum k in 0..n-1 of (2k + 1)"
+  rhs: "n * n"
+parameters:
+  - {name: n, type: Nat}
+drawn_instance: {n: 5}
+objects:
+  square: {shape: square, size: n}
+  "ell(k)": {shape: ell, index: k, range: "0..n-1"}
+argument:
+  - {op: split_ell, repeat: n, on: square, yields: "ell(n-1), ..., ell(0)"}   # square_succ, recursive
+  - {op: count, of: "ell(k)", value: "2k + 1"}                                  # card_ell
+  - {op: count, of: square, value: "n * n"}                                     # card_square
+invariant: cardinality
+lean_map:
+  split_ell: VerifiedImage.Dots.square_succ
+  partition: VerifiedImage.Dots.square_eq_biUnion_ell
+  disjoint: VerifiedImage.Dots.disjoint_ell
+  "count ell": VerifiedImage.Dots.card_ell
+  "count square": VerifiedImage.Dots.card_square

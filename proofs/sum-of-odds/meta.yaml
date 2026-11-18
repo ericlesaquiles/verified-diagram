@@ -1,0 +1,18 @@
+id: sum-of-odds
+title: Sum of odd numbers
+statement_nl: "1 + 3 + 5 + ... + (2n - 1) = n^2"
+category: 2            # Jamnik's taxonomy: 1 non-inductive, 2 inductive w/ parameter, 3 inherently inductive
+space: discrete
+recursive: true        # number of operations depends on n
+sources:
+  - "Nelsen, Proofs Without Words (MAA, 1993)"
+  - "Jamnik, Mathematical Reasoning with Diagrams (CSLI, 2001), development set #1"
+lean:
+  statement: VerifiedImage.SumOfOdds.statement
+  proof: VerifiedImage.SumOfOdds.proof
+  file: VerifiedImage/Proofs/SumOfOdds.lean
+status:
+  statement_checked: true    # by a human: the Lean statement says what the picture means
+  proof_compiles: true
+  faithful: true             # proof follows the picture's argument
+figure: null                 # TODO: redraw (figure.svg) once the renderer exists

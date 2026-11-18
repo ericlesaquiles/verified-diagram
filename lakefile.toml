@@ -1,0 +1,19 @@
+name = "VerifiedImage"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["VerifiedImage"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+weak.linter.style.header = false # no Mathlib-style copyright headers here
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0"
+
+[[lean_lib]]
+name = "VerifiedImage"
